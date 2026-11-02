@@ -47,6 +47,16 @@ def index():
     return render_template(
         "index.html", message=message, status_class=status_class
     )
+@app.route("/about")
+def about():
+    """Menampilkan halaman informasi aplikasi."""
+    return "<h1>Tentang Aplikasi</h1><p>Sistem Login Aman - DevSecOps Demo</p>"
+
+
+@app.route("/health")
+def health():
+    """Endpoint status kesehatan aplikasi."""
+    return {"status": "healthy", "service": "web-flask"}, 200
 
 if __name__ == "__main__":
     init_db()
